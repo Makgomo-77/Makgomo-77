@@ -1,3 +1,228 @@
+/* ==============================
+   Global Styles & Variables
+   ============================== */
+:root {
+    /* Background Colors */
+    --primary-color: #4a90e2;
+    --second-background-color: #f5f6fa;
+    --header-background: #4a90e2;
+    --body-background: #f5f6fa;
+
+    /* Text Colors */
+    --main-text: #222;
+    --header-text: #fff;
+    --navbar-text: #fff;
+    --btn-text: #fff;
+    --btn-hover-text: #4a90e2;
+
+    /* Misc */
+    --box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    --btn-shadow: 0 0 1rem #4a90e2;
+    --border-radius: 4rem;
+    --transition-speed: 0.3s;
+
+    /* Font Sizes */
+    --logo-size: 2rem;
+    --navbar-size: 1.7rem;
+    --h1-size: 5.6rem;
+    --h3-size: 3.2rem;
+    --btn-size: 1.6rem;
+}
+
+/* ==============================
+   Reset & Base Styles
+   ============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    color: var(--main-text);
+    background-color: var(--body-background);
+    line-height: 1.6;
+}
+
+/* ==============================
+   Header & Navigation
+   ============================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--header-background);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+.logo {
+    font-size: var(--logo-size);
+    font-weight: 600;
+    color: var(--header-text);
+    cursor: default;
+    letter-spacing: 2px;
+}
+
+.navbar {
+    font-size: var(--navbar-size);
+    color: var(--navbar-text);
+    margin-left: 4rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: var(--navbar-text);
+    transition: color var(--transition-speed) ease;
+}
+
+.navbar a:hover, .navbar a:active {
+    color: var(--btn-hover-text);
+}
+
+/* ==============================
+   Home Section
+   ============================== */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 60px;
+    gap: 5rem;
+}
+
+.home-content h3 {
+    font-size: var(--h3-size);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.home-content h1 {
+    font-size: var(--h1-size);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.home-img img {
+    width: 35vw;
+    max-width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+/* ==============================
+   Social Links
+   ============================== */
+.sociallinks {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    background: var(--primary-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--btn-text);
+    box-shadow: var(--box-shadow);
+    transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+.sociallinks:hover {
+    background: var(--btn-hover-text);
+    color: var(--btn-text);
+}
+
+/* ==============================
+   Buttons
+   ============================== */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--btn-shadow);
+    font-size: var(--btn-size);
+    color: var(--btn-text);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: background var(--transition-speed), color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.btn:hover {
+    background: var(--btn-hover-text);
+    color: var(--btn-hover-text);
+    box-shadow: 0 0 1rem var(--btn-hover-text);
+}
+
+/* ==============================
+   Responsive Design
+   ============================== */
+@media (max-width: 1200px) {
+    .header {
+        padding: 2rem 4%;
+    }
+    .home {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 80px;
+    }
+    .home-img img {
+        width: 60vw;
+    }
+    .navbar {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+    .home-content h3, .home-content h1 {
+        font-size: 2.2rem;
+    }
+    .btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* ==============================
+   Accessibility Improvements
+   ============================== */
+/* Focus styles for accessibility */
+a:focus, .btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
 * {
     margin: 0;
     padding: 0;
@@ -13,86 +238,4 @@
     --second-background-color: lightgrey;
     color:white;
     --primary-color: #4a90e2;
-}
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-}
-body{
-color: var(--color);
-    background-color: var(--second-background-color);
-}
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem 9%;
-    z-index: 1000;
-}
-.logo{
-    font-size: 2rem;
-    font-weight: 600;
-    color: white;
-    cursor: default;
-}
-.navbar{
-    font-size: 1.7rem;
-    color: white;
-    margin-left: 4rem;
-}
-.navbar a:hover, a:active{
-    color: var(--primary-color);
-
-}
-.home{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.home-content h3{
-    font-size: 3.2rem;
-    font-weight: 700;
-}
-.home-content h1{
-    font-size: 5.6rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-.home-img img{
-    width: 35vw;
-}
-.sociallinks{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    background: transparent;
-    border-radius: 50%;
-    font-size: 2rem;
-    color: var(--second-background-color);
-    background: var(--primary-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.btn{
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: var(--primary-color);
-    border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--primary-color);
-    font-size: 1.6rem;
-    color: var(--second-background-color);
-    letter-spacing: 1rem;
-    font-weight: 600;
-    transition: 5s ease;
-}
-.btn:hover{
-    background: var(--second-background-color);
-    color: var(--primary-color);
-    box-shadow: 0 0 1rem var(--second-background-color);
 }
